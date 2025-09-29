@@ -11,6 +11,8 @@ on:
 jobs:
   mutmut:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: Lab1
 
     steps:
       - name: Checkout
@@ -32,9 +34,9 @@ jobs:
         run: |
           pytest -q -c Lab1/pytest.ini Lab1/tests
 
-      - name: Run mutation tests
+      - name: Run mutation tests (mutmut)
         run: |
-          mutmut run --paths-to-mutate Lab1/calc --tests-dir Lab1/tests --runner "pytest -q" --use-coverage
+          mutmut run
           mutmut results | tee mutmut_results.txt
 
       - name: Upload mutation report
