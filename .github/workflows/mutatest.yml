@@ -35,7 +35,9 @@ jobs:
 
       - name: Run mutation tests (mutatest)
         run: |
-          mutatest -s "Lab1/calc" -t "pytest -q -c Lab1/pytest.ini Lab1/tests" \
+          mutatest -s "Lab1/calc" \
+                   -t "pytest -q -c Lab1/pytest.ini Lab1/tests" \
+                   -n 999 --parallel \
             | tee Lab1/mutatest_results.txt
 
       - name: Upload mutation report
