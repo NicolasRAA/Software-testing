@@ -1,0 +1,34 @@
+# Python bytecode / cache 
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Pytest / Coverage
+.pytest_cache/
+.cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Mutmut (mutation testing)
+.mutmut-cache/
+
+# Editors / OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+build/
+dist/
+*.egg-info/
+
+*.log
+*.tmp
