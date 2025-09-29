@@ -34,14 +34,19 @@ jobs:
           pytest -q -c Lab1/pytest.ini Lab1/tests
 
       - name: Run MutPy (pytest runner)
+        env:
+          PYTHONPATH: Lab1
         run: |
-          python -m mutpy \
+          # MutPy instala el script 'mut.py' como entrypoint.
+          # Target: todo el paquete calc (o calc.operations si quieres solo ese módulo).
+          mut.py \
             --runner pytest \
-            --target calc.operations \
+            --target calc \
             --unit-test tests \
             --path Lab1 \
             --report Lab1/mutpy_results.txt \
-            --report-html Lab1/mutpy_html
+            --html Lab1/mutpy_html
+
           echo "---- MUTPY TEXT REPORT (tail) ----"
           tail -n 200 Lab1/mutpy_results.txt
           test -s Lab1/mutpy_results.txt
