@@ -1,3 +1,4 @@
 ﻿pytest
 pytest-cov
-mutmut
+setuptools
+mutatest
