@@ -2,3 +2,4 @@
 pytest-cov
 setuptools
 mutatest
+mutpy
