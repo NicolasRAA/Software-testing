@@ -1,7 +1,7 @@
 name: Mutation testing (mutatest)
 
 on:
-  workflow_dispatch:  # puedes lanzarlo manualmente
+  workflow_dispatch:
   push:
     paths:
       - "Lab1/**"
@@ -35,10 +35,17 @@ jobs:
 
       - name: Run mutation tests (mutatest)
         run: |
+          set -euxo pipefail
+          echo "PWD: $(pwd)"
+          ls -la
+          # Ejecuta TODAS las mutaciones, en paralelo, y guarda el resumen en archivo
           mutatest -s "Lab1/calc" \
                    -t "pytest -q -c Lab1/pytest.ini Lab1/tests" \
                    -n 999 --parallel \
-            | tee Lab1/mutatest_results.txt
+                   -o "Lab1/mutatest_results.txt"
+          echo "---- MUTATION SUMMARY (tail) ----"
+          tail -n 200 Lab1/mutatest_results.txt
+          test -s Lab1/mutatest_results.txt  # asegura que NO est? vac?o
 
       - name: Upload mutation report
         uses: actions/upload-artifact@v4
