@@ -29,14 +29,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r Lab1/requirements-dev.txt
 
-      - name: Sanity: run unit tests
+      - name: "Sanity: run unit tests"
         run: |
           pytest -q -c Lab1/pytest.ini Lab1/tests
 
       - name: Run MutPy (pytest runner)
         run: |
-          # MutPy necesita nombres de m?dulo, no rutas de archivo.
-          # PYTHONPATH=Lab1 para que 'calc' sea importable.
           python -m mutpy \
             --runner pytest \
             --target calc.operations \
@@ -44,10 +42,9 @@ jobs:
             --path Lab1 \
             --report Lab1/mutpy_results.txt \
             --report-html Lab1/mutpy_html
-          # Muestra resumen al final del log
           echo "---- MUTPY TEXT REPORT (tail) ----"
           tail -n 200 Lab1/mutpy_results.txt
-          test -s Lab1/mutpy_results.txt  # asegura que no est? vac?o
+          test -s Lab1/mutpy_results.txt
 
       - name: Upload MutPy reports
         uses: actions/upload-artifact@v4
