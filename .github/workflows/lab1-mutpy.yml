@@ -1,11 +1,18 @@
 name: Mutation testing (MutPy)
 
+# on:
+#   workflow_dispatch:
+#   push:
+#     paths:
+#       - "Lab1/**"
+#       - ".github/workflows/mutpy.yml"
 on:
   workflow_dispatch:
   push:
+    branches: [ main ]
     paths:
       - "Lab1/**"
-      - ".github/workflows/mutpy.yml"
+      - ".github/workflows/lab1-*.yml"
 
 jobs:
   mutpy:
