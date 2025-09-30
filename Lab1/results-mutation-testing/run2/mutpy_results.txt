@@ -1,0 +1,407 @@
+coverage:
+  all_nodes: 0
+  covered_nodes: 0
+mutation_score: 100.0
+mutations:
+- exception_traceback: "a = 2, b = 3, expected = 5\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (2, 3, 5),\n        (0, 0, 0),\n        (-1, 1, 0),\n\
+    \        (2.5, 0.5, 3.0),\n        (-1.5, -2.5, -4.0),\n    ])\n    def test_add_various(a,\
+    \ b, expected):\n        # Act\n        result = add(a, b)\n        # Assert\n\
+    >       assert result == expected\nE       AssertionError\n\nLab1/tests/test_addition.py:16:\
+    \ AssertionError"
+  killer: tests/test_addition.py::test_add_various[2-3-5]
+  module: &id001 !!python/module:calc.operations ''
+  mutations:
+  - lineno: 6
+    operator: AOR
+  number: 1
+  status: killed
+  tests_run: 1
+  time: 0.10928583145141602
+- exception_traceback: "a = 10, b = 7, expected = 3\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (10, 7, 3),\n        (3, 8, -5),\n        (-2, -5,\
+    \ 3),\n        (2.5, 0.5, 2.0),\n    ])\n    def test_sub_various(a, b, expected):\n\
+    \        # Act\n        result = sub(a, b)\n        # Assert\n>       assert result\
+    \ == expected\nE       AssertionError\n\nLab1/tests/test_subtraction.py:15: AssertionError"
+  killer: tests/test_subtraction.py::test_sub_various[10-7-3]
+  module: *id001
+  mutations:
+  - lineno: 9
+    operator: AOR
+  number: 2
+  status: killed
+  tests_run: 45
+  time: 0.14140748977661133
+- exception_traceback: "a = 0, b = 0\n\n    @pytest.mark.parametrize(\"a,b\", [(0,0),(1,2),(-3,4),(2.5,-0.5)])\n\
+    \    def test_mul_commutative(a, b):\n        # Arrange / Act\n>       r1 = mul(a,\
+    \ b)\n\nLab1/tests/test_properties.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\na = 0, b = 0\n\n>   ???\n\
+    E   ZeroDivisionError: division by zero\n\ncalc.operations:12: ZeroDivisionError"
+  killer: tests/test_properties.py::test_mul_commutative[0-0]
+  module: *id001
+  mutations:
+  - lineno: 12
+    operator: AOR
+  number: 3
+  status: killed
+  tests_run: 10
+  time: 0.11691117286682129
+- exception_traceback: "a = 0, b = 0\n\n    @pytest.mark.parametrize(\"a,b\", [(0,0),(1,2),(-3,4),(2.5,-0.5)])\n\
+    \    def test_mul_commutative(a, b):\n        # Arrange / Act\n>       r1 = mul(a,\
+    \ b)\n\nLab1/tests/test_properties.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\na = 0, b = 0\n\n>   ???\n\
+    E   ZeroDivisionError: integer division or modulo by zero\n\ncalc.operations:12:\
+    \ ZeroDivisionError"
+  killer: tests/test_properties.py::test_mul_commutative[0-0]
+  module: *id001
+  mutations:
+  - lineno: 12
+    operator: AOR
+  number: 4
+  status: killed
+  tests_run: 10
+  time: 0.11658096313476562
+- exception_traceback: "a = 1, b = 2\n\n    @pytest.mark.parametrize(\"a,b\", [(0,0),(1,2),(-3,4),(2.5,-0.5)])\n\
+    \    def test_mul_commutative(a, b):\n        # Arrange / Act\n        r1 = mul(a,\
+    \ b)\n        r2 = mul(b, a)\n        # Assert\n>       assert r1 == r2\nE   \
+    \    AssertionError\n\nLab1/tests/test_properties.py:20: AssertionError"
+  killer: tests/test_properties.py::test_mul_commutative[1-2]
+  module: *id001
+  mutations:
+  - lineno: 12
+    operator: AOR
+  number: 5
+  status: killed
+  tests_run: 11
+  time: 0.11980152130126953
+- exception_traceback: "a = 9, b = 4, expected = 2.25\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (9, 4, 2.25),\n        (-8, 2, -4),\n        (7.5,\
+    \ 2.5, 3.0),\n    ])\n    def test_div_various(a, b, expected):\n        # Act\n\
+    \        result = div(a, b)\n        # Assert\n>       assert result == expected\n\
+    E       AssertionError\n\nLab1/tests/test_division.py:15: AssertionError"
+  killer: tests/test_division.py::test_div_various[9-4-2.25]
+  module: *id001
+  mutations:
+  - lineno: 17
+    operator: AOR
+  number: 6
+  status: killed
+  tests_run: 19
+  time: 0.13177132606506348
+- exception_traceback: "a = 9, b = 4, expected = 2.25\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (9, 4, 2.25),\n        (-8, 2, -4),\n        (7.5,\
+    \ 2.5, 3.0),\n    ])\n    def test_div_various(a, b, expected):\n        # Act\n\
+    \        result = div(a, b)\n        # Assert\n>       assert result == expected\n\
+    E       AssertionError\n\nLab1/tests/test_division.py:15: AssertionError"
+  killer: tests/test_division.py::test_div_various[9-4-2.25]
+  module: *id001
+  mutations:
+  - lineno: 17
+    operator: AOR
+  number: 7
+  status: killed
+  tests_run: 19
+  time: 0.1274707317352295
+- exception_traceback: "base = 2, exp = 3, expected = 8\n\n    @pytest.mark.parametrize(\"\
+    base, exp, expected\", [\n        (2, 3, 8),\n        (2, -1, 0.5),\n        (-2,\
+    \ 3, -8),\n        (-2, 2, 4),\n    ])\n    def test_pow_int_various(base, exp,\
+    \ expected):\n        # Act\n        result = pow_int(base, exp)\n        # Assert\
+    \ (AAA)\n>       assert result == expected\nE       AssertionError\n\nLab1/tests/test_pow_int.py:15:\
+    \ AssertionError"
+  killer: tests/test_pow_int.py::test_pow_int_various[2-3-8]
+  module: *id001
+  mutations:
+  - lineno: 24
+    operator: AOR
+  number: 8
+  status: killed
+  tests_run: 31
+  time: 0.13277244567871094
+- exception_traceback: "n = 5, expected = 120\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n        result = factorial(n)\n        # Assert\n\
+    >       assert result == expected\nE       AssertionError\n\nLab1/tests/test_factorial.py:15:\
+    \ AssertionError"
+  killer: tests/test_factorial.py::test_factorial_small[5-120]
+  module: *id001
+  mutations:
+  - lineno: 32
+    operator: AOR
+  number: 9
+  status: killed
+  tests_run: 28
+  time: 0.13341999053955078
+- exception_traceback: "n = 5, expected = 120\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n        result = factorial(n)\n        # Assert\n\
+    >       assert result == expected\nE       AssertionError\n\nLab1/tests/test_factorial.py:15:\
+    \ AssertionError"
+  killer: tests/test_factorial.py::test_factorial_small[5-120]
+  module: *id001
+  mutations:
+  - lineno: 33
+    operator: ASR
+  number: 10
+  status: killed
+  tests_run: 28
+  time: 0.13307547569274902
+- exception_traceback: "n = 5, expected = 120\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n        result = factorial(n)\n        # Assert\n\
+    >       assert result == expected\nE       AssertionError\n\nLab1/tests/test_factorial.py:15:\
+    \ AssertionError"
+  killer: tests/test_factorial.py::test_factorial_small[5-120]
+  module: *id001
+  mutations:
+  - lineno: 33
+    operator: ASR
+  number: 11
+  status: killed
+  tests_run: 28
+  time: 0.13028931617736816
+- exception_traceback: "n = 5, expected = 120\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n        result = factorial(n)\n        # Assert\n\
+    >       assert result == expected\nE       AssertionError\n\nLab1/tests/test_factorial.py:15:\
+    \ AssertionError"
+  killer: tests/test_factorial.py::test_factorial_small[5-120]
+  module: *id001
+  mutations:
+  - lineno: 33
+    operator: ASR
+  number: 12
+  status: killed
+  tests_run: 28
+  time: 0.13416028022766113
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 20
+    operator: COD
+  number: 13
+  status: incompetent
+  tests_run: 31
+  time: 0.13826346397399902
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 27
+    operator: COD
+  number: 14
+  status: incompetent
+  tests_run: 26
+  time: 0.13474678993225098
+- exception_traceback: "a = 9, b = 4, expected = 2.25\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (9, 4, 2.25),\n        (-8, 2, -4),\n        (7.5,\
+    \ 2.5, 3.0),\n    ])\n    def test_div_various(a, b, expected):\n        # Act\n\
+    >       result = div(a, b)\n\nLab1/tests/test_division.py:13: \n_ _ _ _ _ _ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\na = 9,\
+    \ b = 4\n\n>   ???\nE   ZeroDivisionError: division by zero\n\ncalc.operations:16:\
+    \ ZeroDivisionError"
+  killer: tests/test_division.py::test_div_various[9-4-2.25]
+  module: *id001
+  mutations:
+  - lineno: 15
+    operator: COI
+  number: 15
+  status: killed
+  tests_run: 19
+  time: 0.13059377670288086
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 20
+    operator: COI
+  number: 16
+  status: incompetent
+  tests_run: 31
+  time: 0.14025616645812988
+- exception_traceback: "base = 2, exp = 3, expected = 8\n\n    @pytest.mark.parametrize(\"\
+    base, exp, expected\", [\n        (2, 3, 8),\n        (2, -1, 0.5),\n        (-2,\
+    \ 3, -8),\n        (-2, 2, 4),\n    ])\n    def test_pow_int_various(base, exp,\
+    \ expected):\n        # Act\n>       result = pow_int(base, exp)\n\nLab1/tests/test_pow_int.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nbase = 2, exp = 3\n\n>   ???\nE   ZeroDivisionError: 0 cannot be raised\
+    \ to a negative power\n\ncalc.operations:23: ZeroDivisionError"
+  killer: tests/test_pow_int.py::test_pow_int_various[2-3-8]
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: COI
+  number: 17
+  status: killed
+  tests_run: 31
+  time: 0.14182686805725098
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 27
+    operator: COI
+  number: 18
+  status: incompetent
+  tests_run: 26
+  time: 0.1389913558959961
+- exception_traceback: "n = 0, expected = 1\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n>       result = factorial(n)\n\nLab1/tests/test_factorial.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nn = 0\n\n>   ???\nE   ValueError: n must be >= 0\n\ncalc.operations:30:\
+    \ ValueError"
+  killer: tests/test_factorial.py::test_factorial_small[0-1]
+  module: *id001
+  mutations:
+  - lineno: 29
+    operator: COI
+  number: 19
+  status: killed
+  tests_run: 26
+  time: 0.13937592506408691
+- exception_traceback: "base = 2, exp = -1, expected = 0.5\n\n    @pytest.mark.parametrize(\"\
+    base, exp, expected\", [\n        (2, 3, 8),\n        (2, -1, 0.5),\n        (-2,\
+    \ 3, -8),\n        (-2, 2, 4),\n    ])\n    def test_pow_int_various(base, exp,\
+    \ expected):\n        # Act\n>       result = pow_int(base, exp)\n\nLab1/tests/test_pow_int.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nbase = 2, exp = -1\n\n>   ???\nE   ZeroDivisionError: 0 cannot be\
+    \ raised to a negative power\n\ncalc.operations:23: ZeroDivisionError"
+  killer: tests/test_pow_int.py::test_pow_int_various[2--1-0.5]
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: LCR
+  number: 20
+  status: killed
+  tests_run: 32
+  time: 0.14638853073120117
+- exception_traceback: "a = 9, b = 4, expected = 2.25\n\n    @pytest.mark.parametrize(\"\
+    a,b,expected\", [\n        (9, 4, 2.25),\n        (-8, 2, -4),\n        (7.5,\
+    \ 2.5, 3.0),\n    ])\n    def test_div_various(a, b, expected):\n        # Act\n\
+    >       result = div(a, b)\n\nLab1/tests/test_division.py:13: \n_ _ _ _ _ _ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\na = 9,\
+    \ b = 4\n\n>   ???\nE   ZeroDivisionError: division by zero\n\ncalc.operations:16:\
+    \ ZeroDivisionError"
+  killer: tests/test_division.py::test_div_various[9-4-2.25]
+  module: *id001
+  mutations:
+  - lineno: 15
+    operator: ROR
+  number: 21
+  status: killed
+  tests_run: 19
+  time: 0.1349325180053711
+- exception_traceback: "base = 2, exp = -1, expected = 0.5\n\n    @pytest.mark.parametrize(\"\
+    base, exp, expected\", [\n        (2, 3, 8),\n        (2, -1, 0.5),\n        (-2,\
+    \ 3, -8),\n        (-2, 2, 4),\n    ])\n    def test_pow_int_various(base, exp,\
+    \ expected):\n        # Act\n>       result = pow_int(base, exp)\n\nLab1/tests/test_pow_int.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nbase = 2, exp = -1\n\n>   ???\nE   ZeroDivisionError: 0 cannot be\
+    \ raised to a negative power\n\ncalc.operations:23: ZeroDivisionError"
+  killer: tests/test_pow_int.py::test_pow_int_various[2--1-0.5]
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: ROR
+  number: 22
+  status: killed
+  tests_run: 32
+  time: 0.1444993019104004
+- exception_traceback: "def test_pow_int_zero_base_positive_exp():\n        # Arrange\n\
+    \        base, exp = 0, 5\n        # Act + Assert\n>       assert pow_int(base,\
+    \ exp) == 0\n\nLab1/tests/test_pow_int.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nbase = 0, exp = 5\n\n\
+    >   ???\nE   ZeroDivisionError: 0 cannot be raised to a negative power\n\ncalc.operations:23:\
+    \ ZeroDivisionError"
+  killer: tests/test_pow_int.py::test_pow_int_zero_base_positive_exp
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: ROR
+  number: 23
+  status: killed
+  tests_run: 38
+  time: 0.14803218841552734
+- exception_traceback: "def test_pow_int_zero_base_zero_exp():\n        # Arrange\n\
+    \        base, exp = 0, 0\n        # Act + Assert\n>       assert pow_int(base,\
+    \ exp) == 1  # \u0432 Python 0**0 == 1\n\nLab1/tests/test_pow_int.py:34: \n_ _\
+    \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ \n\nbase = 0, exp = 0\n\n>   ???\nE   ZeroDivisionError: 0 cannot be raised\
+    \ to a negative power\n\ncalc.operations:23: ZeroDivisionError"
+  killer: tests/test_pow_int.py::test_pow_int_zero_base_zero_exp
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: ROR
+  number: 24
+  status: killed
+  tests_run: 37
+  time: 0.1471996307373047
+- exception_traceback: "n = 1, expected = 1\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n>       result = factorial(n)\n\nLab1/tests/test_factorial.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nn = 1\n\n>   ???\nE   ValueError: n must be >= 0\n\ncalc.operations:30:\
+    \ ValueError"
+  killer: tests/test_factorial.py::test_factorial_small[1-1]
+  module: *id001
+  mutations:
+  - lineno: 29
+    operator: ROR
+  number: 25
+  status: killed
+  tests_run: 27
+  time: 0.13884592056274414
+- exception_traceback: "n = 0, expected = 1\n\n    @pytest.mark.parametrize(\"n,expected\"\
+    , [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n    ])\n    def test_factorial_small(n,\
+    \ expected):\n        # Act\n>       result = factorial(n)\n\nLab1/tests/test_factorial.py:13:\
+    \ \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\
+    \ _ _ _ \n\nn = 0\n\n>   ???\nE   ValueError: n must be >= 0\n\ncalc.operations:30:\
+    \ ValueError"
+  killer: tests/test_factorial.py::test_factorial_small[0-1]
+  module: *id001
+  mutations:
+  - lineno: 29
+    operator: ROR
+  number: 26
+  status: killed
+  tests_run: 26
+  time: 0.1356048583984375
+number_of_tests: 48
+targets:
+- calc
+tests:
+- name: test_division
+  target: null
+  time: 0.08003568649291992
+- name: test_pow_int
+  target: null
+  time: 0.06411242485046387
+- name: test_properties
+  target: null
+  time: 0.07430672645568848
+- name: conftest
+  target: null
+  time: 0.054411888122558594
+- name: test_subtraction
+  target: null
+  time: 0.05913043022155762
+- name: test_randomized
+  target: null
+  time: 0.05683183670043945
+- name: test_addition
+  target: null
+  time: 0.06155061721801758
+- name: test_factorial
+  target: null
+  time: 0.061951398849487305
+- name: test_multiplication
+  target: null
+  time: 0.062151193618774414
+time_stats:
+  create_mutant_module: 0.0069544315338134766
+  create_target_ast: 0.0012216567993164062
+  mutate_module: 3.7869808673858643
+  run_tests_with_mutant: 3.5092623233795166
+total_time: 4.366927623748779
